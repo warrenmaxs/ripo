@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passcode Form</title>
+    <style>
+        body {
+            background-image: url(tile-red.jpg);
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            text-align: center;
+            color: black;
+        }
+        .sub-btn {
+            background-color: #06086a;
+            color: rgba(182, 0, 0, 0.679);
+            padding: 8px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: .5s;
+            border-radius: 5px;
+        }
+        .sub-btn:hover {
+            background-color: rgba(182, 0, 0, 0.679);
+            box-shadow: 0 0 20px #FFF;
+            color: #ffffff;
+        }
+        input {
+            width: 200px;
+            height: auto;
+            background-color: aliceblue;
+            border-radius: 5px;
+            padding: 8px;
+        }
+
+        #passcode-input {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #submit-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result-message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+        .form {
+            border: 1px solid #FFF;
+            box-shadow: 0 0 15px #000000;
+            border-radius: 10px;
+            backdrop-filter: blur(7px);
+            text-align: center;
+            padding: 30px;
+            margin: 40px;
+
+        }
+        .logo {
+            border-radius: 50%;
+            width: 130px;
+            height: auto;
+        }
+        .tlg {
+            width: auto;
+            height: 50px;
+            display: center;
+            background: #06086a;
+            border: 2px solid rgba(46, 24, 141, 0.976);
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 700;
+            transition: .5s;
+            }
+            .tlg:hover {
+            background-color: #06086a;
+            box-shadow: 0 0 20px rgb(40, 2, 228);
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form">
+        <div class="form-container">
+            <img src="logo-left sc 2.png" class="logo">
+            <h1>To Be One Ask One! </h1>
+        </div>
+        <form>
+            <input type="password" id="passcode" placeholder="Enter passcode">
+            <button id="submit" class="sub-btn" onclick="checkPasscode()">Submit</button>
+            <p id="result-message"></p>
+        </form>
+    </div>
+
+    <script>
+
+        function checkPasscode() {
+            var passcodeInput = document.getElementById('passcode').value;
+            var resultMessage = document.getElementById('result-message');
+
+            // Check if the entered passcode is correct
+            if (passcodeInput === '5674GodLove') {
+                resultMessage.style.color = 'green';
+                alert('Utambulisho wako umepokelewa na Grand Master!');
+            } else {
+                resultMessage.style.color = 'red';
+                alert('Incorrect passcode. Please ask who invited you.');
+            }
+
+        }
+
+        form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent form from submitting
+
+        // Get user inputs
+        const passcode = document.querySelector('#passcode').value;
+
+        // Store user inputs to local storage
+        localStorage.setItem('passcode', passcode);
+
+        form.reset(); // Reset form inputs
+        });
+    </script>
+
+</body>
+</html>
